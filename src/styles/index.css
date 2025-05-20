@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy: 26, 42, 66;
+    --color-gray: 107, 122, 153;
+    --color-accent: 232, 92, 65;
+    --color-light: 249, 250, 251;
+    --color-dark: 17, 24, 39;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-800 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 rounded-md font-medium transition-all duration-300 inline-block;
+  }
+
+  .btn-primary {
+    @apply bg-[rgb(var(--color-accent))] text-white hover:bg-[rgb(var(--color-accent))]/90 shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-2 border-navy text-navy hover:bg-[rgba(var(--color-navy),0.05)];
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .heading-xl {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  .heading-lg {
+    @apply font-serif text-3xl md:text-4xl leading-tight;
+  }
+
+  .heading-md {
+    @apply font-serif text-2xl md:text-3xl leading-tight;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 lg:px-8;
+  }
+}
+
+/* Custom utility classes */
+.bg-navy {
+  @apply bg-[rgb(var(--color-navy))];
+}
+
+.bg-gray {
+  @apply bg-[rgb(var(--color-gray))];
+}
+
+.bg-accent {
+  @apply bg-[rgb(var(--color-accent))];
+}
+
+.text-navy {
+  @apply text-[rgb(var(--color-navy))];
+}
+
+.text-gray {
+  @apply text-[rgb(var(--color-gray))];
+}
+
+.text-accent {
+  @apply text-[rgb(var(--color-accent))];
+}
+
+.border-navy {
+  @apply border-[rgb(var(--color-navy))];
+}
+
+.border-accent {
+  @apply border-[rgb(var(--color-accent))];
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+/* Accordion styles */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.open {
+  max-height: 300px;
+}
